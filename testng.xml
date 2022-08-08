@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="com.buffalocart.extendreportlistner.ExtendReportListner"/>
+    </listeners>
+        <test name="F:/IdeaProjects/buffalocart">
+        <classes>
+            <class name="com.buffalocart.testscripts.HomePageTest">
+                <methods>
+                    <include name="verifyHomePageTitle"/>
+                    <include name="verifyDateDisplayed"/>
+                    <include name="verifyUserManagementSubTabs"/>
+                </methods>
+            </class>
+            <class name="com.buffalocart.testscripts.LoginPageTest">
+                <methods>
+                    <include name="verify_Login_Page_Title"/>
+                    <include name="verify_Invalid_Credentials"/>
+                    <include name="verifyCheckboxSelected"/>
+                    <include name="verify_Reset_Password_With_Invalid_Credentials"/>
+                </methods>
+            </class>
+            <class name="com.buffalocart.testscripts.UsersPageTest">
+                <methods>
+                    <include name="verifyUsersPage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

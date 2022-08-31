@@ -6,24 +6,54 @@
     </listeners>
         <test name="F:/IdeaProjects/buffalocart">
         <classes>
-            <class name="com.buffalocart.testscripts.HomePageTest">
-                <methods>
-                    <include name="verifyHomePageTitle"/>
-                    <include name="verifyDateDisplayed"/>
-                    <include name="verifyUserManagementSubTabs"/>
-                </methods>
-            </class>
             <class name="com.buffalocart.testscripts.LoginPageTest">
                 <methods>
                     <include name="verify_Login_Page_Title"/>
+                    <include name="verify_Valid_Login"/>
                     <include name="verify_Invalid_Credentials"/>
                     <include name="verifyCheckboxSelected"/>
                     <include name="verify_Reset_Password_With_Invalid_Credentials"/>
                 </methods>
             </class>
+            <class name="com.buffalocart.testscripts.HomePageTest">
+                <methods>
+                    <include name="verifyHomePageTitle"/>
+                    <include name="public void verifyDateDisplayed"/>
+                    <include name="verifySignOutButton"/>
+                    <include name="verify_Role_Page_Title"/>
+                    <include name="verify_Sales_Commission_Agents_page_title"/>
+                </methods>
+            </class>
             <class name="com.buffalocart.testscripts.UsersPageTest">
                 <methods>
-                    <include name="verifyUsersPage"/>
+                    <include name="verifyUsersPageTitle"/>
+                    <include name="verify_user_can_add_user_details"/>
+                    <include name="verify_Edit_User_page_title"/>
+                    <include name="verify_user_search_with_valid_data"/>
+                    <include name="verify_user_search_with_invalid_data"/>
+                    <include name="verify_the_error_message_displayed_without_filling_mandatory_fields"/>
+                    <include name="verify_Add_Users_page_title"/>
+                    <include name="verify_user_login_with_newly_added_user"/>
+                    <include name="verify_user_can_delete_a_user"/>
+                    <include name="verify_detail_displayed_on_view_user_page"/>
+                    <include name="verify_added_role_in_user_add_page"/>
+                    <include name="verify_user_can_edit_the_user_details"/>
+                </methods>
+            </class>
+            <class name="com.buffalocart.testscripts.RolePageTest">
+                <methods>
+                    <include name="verify_Add_Roles_page_title"/>
+                    <include name="verify_Edit_Role_page_title"/>
+                    <include name="verify_user_can_add_roles"/>
+                    <include name="verify_user_can_update_a_role"/>
+                    <include name="verify_user_can_delete_a_role_from_the_list"/>
+                </methods>
+            </class>
+            <class name="com.buffalocart.testscripts.SalesCommAgentsTest">
+                <methods>
+                    <include name="verify_user_can_add_sales_agent"/>
+                    <include name="verify_Edit_sales_agent_details"/>
+                    <include name="verify_user_can_delete_a_Sales_Commission_Agents"/>
                 </methods>
             </class>
         </classes>

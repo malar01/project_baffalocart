@@ -54,6 +54,6 @@ public class Base {
             File screenshot = ts.getScreenshotAs(OutputType.FILE);
             FileUtils.copyFile(screenshot, new File("./Screenshots/" + result.getName() + ".png"));
         }
-        //driver.quit();
+     driver.quit();
     }
 }

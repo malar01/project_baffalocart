@@ -13,6 +13,9 @@ public class PageUtility {
         String title = driver.getTitle();
         return title;
     }
+    public void clearText(WebElement element){
+        element.clear();
+    }
 
     public String getElementText(WebElement element) {
         String text = element.getText();
@@ -52,7 +55,7 @@ public class PageUtility {
 
     public void getSelectByVisibleText(WebElement element, String value) {
         Select s = new Select(element);
-        s.deselectByVisibleText(value);
+        s.selectByVisibleText(value);
     }
 
     public WebElement getFirstElementSelected(WebElement element) {
@@ -61,8 +64,8 @@ public class PageUtility {
         return element1;
     }
 
-    public List<WebElement> getAllSelectedElements(WebElement element) {
-        Select s = new Select(element);
+    public List<WebElement> getAllSelectedElements(List<WebElement> element) {
+        Select s = new Select((WebElement) element);
         List<WebElement> elements = s.getAllSelectedOptions();
         return elements;
     }

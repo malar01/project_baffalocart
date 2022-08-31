@@ -19,17 +19,16 @@ public class LoginPageTest extends Base {
     RandomDataUtility random;
     LoginPage login;
     HomePage home;
-    @Test(description = "TC_001_Verify Login page title")
+    @Test(priority=1,description = "TC_001_Verify Login page title")
     public void verify_Login_Page_Title(){
         login=new LoginPage(driver);
         excel=new ExcelUtility();
         String actual_title=login.getLoginPageTitle();
         String expected_title=excel.readSingleData(1,0,"LoginPageTitle");
         Assert.assertEquals(actual_title,expected_title,"ERROR: Title Mismatch");
-        System.out.println(actual_title);
-    }
-    @Test(description = "TC_002_Verify user login with valid user credentials",groups = {"smoke"})
-    public void verify_Valid_Login() throws IOException {
+        }
+    @Test(priority=2,description = "TC_002_Verify user login with valid user credentials",groups = {"smoke"})
+    public void verify_Valid_Login(){
         home=new HomePage(driver);
         excel=new ExcelUtility();
         login=new LoginPage(driver);
@@ -37,13 +36,13 @@ public class LoginPageTest extends Base {
         login.enterUserName(name);
         String pass=excel.readSingleData(1,1,"LoginPage");
         login.enterPassword(pass);
-        login.enterLoginButton();
-        login.enterButtonEndTour();
+        home=login.enterLoginButton();
+        home.enterButtonEndTour();
         String expected_Account_name=excel.readSingleData(1,0,"AccountName");
         String actual_Account_name=home.getAccountName();
         Assert.assertEquals(actual_Account_name,expected_Account_name,"ERROR:Invalid AccountName");
     }
-    @Test(description = "TC_003_Verify the error message displayed for user login with invalid credentials")
+    @Test(priority=3,description = "TC_003_Verify the error message displayed for user login with invalid credentials")
     public void verify_Invalid_Credentials(){
         excel=new ExcelUtility();
         login=new LoginPage(driver);
@@ -57,7 +56,7 @@ public class LoginPageTest extends Base {
         String actual_mssg=login.displayErrorMessage();
         Assert.assertEquals(actual_mssg,expected_mssg,"ERROR:No error message displayed");
     }
-    @Test(description = "TC_004_Verify whether the user is able to click on 'Remember me' checkbox")
+    @Test(priority=4,description = "TC_004_Verify whether the user is able to click on 'Remember me' checkbox")
     public void verifyCheckboxSelected(){
         home=new HomePage(driver);
         excel=new ExcelUtility();
@@ -69,10 +68,10 @@ public class LoginPageTest extends Base {
         login.clickCheckBox();
         boolean check_enabled=login.isCheckBoxSelected();
         login.enterLoginButton();
-        login.enterButtonEndTour();
+        home.enterButtonEndTour();
         Assert.assertTrue(check_enabled);
     }
-    @Test(description = "TC_005_Verify error message displayed on  Reset Password page with invalid email id")
+    @Test(priority=5,description = "TC_005_Verify error message displayed on  Reset Password page with invalid email id")
     public void verify_Reset_Password_With_Invalid_Credentials(){
         excel=new ExcelUtility();
         random=new RandomDataUtility();

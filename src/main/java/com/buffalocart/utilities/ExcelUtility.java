@@ -32,4 +32,24 @@ public class ExcelUtility {
         String value = formatter.formatCellValue(sheet.getRow(i).getCell(j));
         return value;
     }
+    public String[][] readDataFromExcel(String sheetName) throws IOException {
+        String filePath=System.getProperty("user.dir") + "\\src\\main\\resources\\TestData.xlsx";
+        FileInputStream file = new FileInputStream(filePath);
+        XSSFWorkbook workbook = new XSSFWorkbook(file);
+        XSSFSheet sheet = workbook.getSheet(sheetName);
+        int noOfRows = sheet.getLastRowNum();
+        int noOfColumns = sheet.getRow(0).getLastCellNum();
+
+        String[][] data = new String[noOfRows][noOfColumns];
+        for (int i = 1; i <=noOfRows; i++) {
+            for (int j = 0; j < noOfColumns; j++) {
+                DataFormatter formatter = new DataFormatter();
+                data[i-1][j] = formatter.formatCellValue(sheet.getRow(i).getCell(j));
+            }
+            System.out.println();
+        }
+        workbook.close();
+        file.close();
+        return data;
+    }
 }

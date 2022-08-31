@@ -27,6 +27,11 @@ public class WaitUtility {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(time));
         wait.until(ExpectedConditions.visibilityOf(element));
     }
+    public void waitUntilElementToBeClickable(long time,WebDriver driver,WebElement element){
+    WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(time));
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
+
 
 
     public void fluentWait(long time, long ftime, WebDriver driver, WebElement element) {

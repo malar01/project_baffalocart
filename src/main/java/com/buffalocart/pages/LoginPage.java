@@ -16,19 +16,17 @@ public class LoginPage extends ObjectUtility {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//input[@id='username']")
+    @FindBy(xpath = "//div[@class='col-md-6']//input[@id='username']")
     WebElement username;
 
     @FindBy(xpath = "//input[@id='password']")
     WebElement password;
 
-    @FindBy(xpath = "//button[@class='btn btn-primary']")
+    @FindBy(xpath = "//div[@class='col-md-8 col-md-offset-4']//button[@class='btn btn-primary']")
     WebElement login;
 
-    @FindBy(xpath="//a[@class='btn btn-link']")
+    @FindBy(xpath="//div[@class='col-md-8 col-md-offset-4']//a[@class='btn btn-link']")
     WebElement forgot_link;
-    @FindBy(xpath = "//button[@class='btn btn-default btn-sm']")
-    WebElement endTour;
 
     @FindBy(xpath = "//span[text()='Aju Mathew']")
     WebElement useraccountname;
@@ -39,7 +37,7 @@ public class LoginPage extends ObjectUtility {
     @FindBy(xpath="//input[@name='remember']")
     WebElement remember_chk;
     public String getLoginPageTitle() {
-        String title = page.getPageTitle(driver);
+        String title =page.getPageTitle(driver);
         return title;
     }
 
@@ -47,13 +45,12 @@ public class LoginPage extends ObjectUtility {
         page.getPageTitle(driver);
     }
     public void enterUserName(String uname){
+       // wait.waitUntilVisibilityOfElement(20,driver,username);
         page.enterText(username,uname);
     }
 
-    public void giveExplicitWait(){
-        wait.waitUntilVisibilityOfElement(30,driver,username);
-            }
     public void enterPassword(String pass){
+      //  wait.waitUntilVisibilityOfElement(10,driver,username);
         page.enterText(password,pass);
     }
 
@@ -61,10 +58,13 @@ public class LoginPage extends ObjectUtility {
         page.clickOnElement(remember_chk);
     }
     public ResetPasswordPage clickForgotPasswordLink(){
+        wait.waitUntilVisibilityOfElement(10,driver,forgot_link);
         page.clickOnElement(forgot_link);
         return new ResetPasswordPage(driver);
     }
     public HomePage enterLoginButton() {
+        wait.waitUntilElementToBeClickable(10,driver,login);
+        //wait.hardWait(1000);
         page.clickOnElement(login);
         return new HomePage(driver);
     }
@@ -77,8 +77,5 @@ public class LoginPage extends ObjectUtility {
         return check_selected;
     }
 
-    public void enterButtonEndTour() {
-        page.clickOnElement(endTour);
-    }
 }
 

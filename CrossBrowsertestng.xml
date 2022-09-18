@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression Suite">
+    <listeners>
+        <listener class-name="com.buffalocart.extendreportlistner.ExtendReportListner"/>
+    </listeners>
+    <test name="Functionaltest">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="url" value="https://qalegend.com/billing/public/login"/>
+        <classes>
+            <class name="com.buffalocart.automationcore.Base"/>
+            <class name="com.buffalocart.testscripts.LoginPageTest"></class>
+        </classes>
+    </test>
+    <test name="Functionaltest1">
+        <parameter name="browser" value="edge"/>
+        <parameter name="url" value="http://demowebshop.tricentis.com/"/>
+        <classes>
+            <class name="com.buffalocart.automationcore.Base"/>
+            <class name="com.buffalocart.testscripts.LoginPageTest"/>
+        </classes>
+    </test>
+</suite>

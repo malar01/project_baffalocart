@@ -1,0 +1,9 @@
+com\buffalocart\testscripts\RolePageTest.class
+com\buffalocart\testscripts\SalesCommAgentsTest.class
+com\buffalocart\testscripts\UsersPageTest.class
+com\buffalocart\testscripts\EditRollPageTest.class
+com\buffalocart\testscripts\LoginPageTest.class
+com\buffalocart\testscripts\HomePageTest.class
+com\buffalocart\testscripts\AddRolePageTest.class
+com\buffalocart\testscripts\ResetPasswordTest.class
+com\buffalocart\testscripts\AddUsersPageTest.class

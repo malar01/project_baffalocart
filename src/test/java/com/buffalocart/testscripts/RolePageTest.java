@@ -3,12 +3,8 @@ package com.buffalocart.testscripts;
 import com.buffalocart.automationcore.Base;
 import com.buffalocart.pages.*;
 import com.buffalocart.utilities.ExcelUtility;
-import com.buffalocart.utilities.WaitUtility;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import javax.management.relation.Role;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,49 +15,50 @@ public class RolePageTest extends Base {
     HomePage home;
     LoginPage login;
     ExcelUtility excel;
-    WaitUtility wait;
     RolePage rolePage;
-    UsersPage usersPage;
-@Test(priority = 22,description = "TC_022_Verify Add Roles page title")
-    public void  verify_Add_Roles_page_title(){
-    addRolePage=new AddRollPage(driver);
-    rolePage=new RolePage(driver);
-    home = new HomePage(driver);
-    excel = new ExcelUtility();
-    login = new LoginPage(driver);
-    String name = excel.readSingleData(1, 0, "LoginPage");
-    login.enterUserName(name);
-    String pass = excel.readSingleData(1, 1, "LoginPage");
-    login.enterPassword(pass);
-    home = login.enterLoginButton();
-    home.enterButtonEndTour();
-    home.clickUserManagement();
-    rolePage=home.click_sub_menu_role();
-    addRolePage=rolePage.click_add_role();
-    String actual_title= addRolePage.get_add_role_page_title();
-    String expected_title= excel.readSingleData(1,0,"AddRolePageTitle");
-    Assert.assertEquals(actual_title,expected_title,"ERROR:Title Mismatch");
-}
-@Test(priority = 24,description ="TC_024_Verify Edit Role page title")
-    public void verify_Edit_Role_page_title(){
-    addRolePage=new AddRollPage(driver);
-    rolePage=new RolePage(driver);
-    home = new HomePage(driver);
-    excel = new ExcelUtility();
-    login = new LoginPage(driver);
-    String name = excel.readSingleData(1, 0, "LoginPage");
-    login.enterUserName(name);
-    String pass = excel.readSingleData(1, 1, "LoginPage");
-    login.enterPassword(pass);
-    home = login.enterLoginButton();
-    home.enterButtonEndTour();
-    home.clickUserManagement();
-    rolePage=home.click_sub_menu_role();
-    editRollPage=rolePage.clickEditRolePage();
-    String actual_title=rolePage.getEditRollPageTitle();
-    String expected_title=excel.readSingleData(1,0,"EditRolePageTitle");
-    Assert.assertEquals(actual_title,expected_title,"ERROR:Title Mismatch");
+
+    @Test(priority = 22,description = "TC_022_Verify Add Roles page title")
+        public void verify_Add_Roles_page_title(){
+        addRolePage=new AddRollPage(driver);
+        rolePage=new RolePage(driver);
+        home = new HomePage(driver);
+        excel = new ExcelUtility();
+        login = new LoginPage(driver);
+        String name = excel.readSingleData(1, 0, "LoginPage");
+        login.enterUserName(name);
+        String pass = excel.readSingleData(1, 1, "LoginPage");
+        login.enterPassword(pass);
+        home = login.enterLoginButton();
+        home.enterButtonEndTour();
+        home.clickUserManagement();
+        rolePage=home.click_sub_menu_role();
+        addRolePage=rolePage.click_add_role();
+        String actual_title= addRolePage.get_add_role_page_title();
+        String expected_title= excel.readSingleData(1,0,"AddRolePageTitle");
+        Assert.assertEquals(actual_title,expected_title,"ERROR:Title Mismatch");
     }
+    @Test(priority = 24,description ="TC_024_Verify Edit Role page title")
+    public void verify_Edit_Role_page_title() {
+        addRolePage = new AddRollPage(driver);
+        rolePage = new RolePage(driver);
+        home = new HomePage(driver);
+        excel = new ExcelUtility();
+        login = new LoginPage(driver);
+        String name = excel.readSingleData(1, 0, "LoginPage");
+        login.enterUserName(name);
+        String pass = excel.readSingleData(1, 1, "LoginPage");
+        login.enterPassword(pass);
+        home = login.enterLoginButton();
+        home.enterButtonEndTour();
+        home.clickUserManagement();
+        rolePage = home.click_sub_menu_role();
+        editRollPage = rolePage.clickEditRolePage();
+        String actual_title = rolePage.getEditRollPageTitle();
+        String expected_title = excel.readSingleData(1, 0, "EditRolePageTitle");
+        Assert.assertEquals(actual_title, expected_title, "ERROR:Title Mismatch");
+    }
+
+
     @Test(priority = 23,description = "TC_023_Verify  user can add roles",groups = {"smoke"})
     public void verify_user_can_add_roles(){
         addRolePage=new AddRollPage(driver);

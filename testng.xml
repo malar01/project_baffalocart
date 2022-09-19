@@ -4,7 +4,7 @@
     <listeners>
         <listener class-name="com.buffalocart.extendreportlistner.ExtendReportListner"/>
     </listeners>
-        <test name="F:/IdeaProjects/buffalocart">
+    <test name="F:/IdeaProjects/buffalocart">
         <classes>
             <class name="com.buffalocart.testscripts.LoginPageTest">
                 <methods>

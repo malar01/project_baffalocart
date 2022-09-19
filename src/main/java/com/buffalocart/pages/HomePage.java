@@ -100,7 +100,7 @@ public class HomePage extends ObjectUtility {
 
     public UsersPage clickUserPage() {
         wait.waitUntilVisibilityOfElement(30, driver, users);
-       //wait.hardWait(1000);
+        //wait.hardWait(1000);
         page.clickOnElement(users);
         return new UsersPage(driver);
     }
@@ -127,7 +127,7 @@ public class HomePage extends ObjectUtility {
             System.out.println(list_elements);
         }
         return menu_list;
-        }
+    }
     public RolePage click_sub_menu_role(){
         wait.waitUntilVisibilityOfElement(10,driver,roles);
         page.mouseHover(driver,roles);
@@ -141,5 +141,4 @@ public class HomePage extends ObjectUtility {
         return new SalesCommAgentsPage(driver);
     }
 }
-
 

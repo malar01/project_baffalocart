@@ -1,3 +1,4 @@
+
 package com.buffalocart.pages;
 
 import com.buffalocart.utilities.ObjectUtility;
@@ -77,6 +78,4 @@ public class LoginPage extends ObjectUtility {
         boolean check_selected=page.getElementIsSelected(remember_chk);
         return check_selected;
     }
-
 }
-

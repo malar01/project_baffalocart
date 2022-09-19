@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Regression Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <listeners>
+    <listener class-name="com.buffalocart.extendreportlistner.ExtendReportListner"/>
+  </listeners>
+  <test thread-count="5" name="Functionaltest(failed)" verbose="0">
+    <parameter name="browser" value="chrome"/>
+    <parameter name="url" value="https://qalegend.com/billing/public/login"/>
+    <classes>
+      <class name="com.buffalocart.testscripts.SalesCommAgentsTest">
+        <methods>
+          <include name="verify_Edit_sales_agent_details"/>
+          <include name="setup"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.buffalocart.testscripts.SalesCommAgentsTest -->
+      <class name="com.buffalocart.testscripts.HomePageTest">
+        <methods>
+          <include name="verifyHomePageTitle"/>
+          <include name="verifySignOutButton"/>
+          <include name="setup"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.buffalocart.testscripts.HomePageTest -->
+      <class name="com.buffalocart.testscripts.UsersPageTest">
+        <methods>
+          <include name="verify_user_login_with_newly_added_user"/>
+          <include name="verifyUsersPageTitle"/>
+          <include name="verify_Add_Users_page_title"/>
+          <include name="verify_Edit_User_page_title"/>
+          <include name="verify_user_can_edit_the_user_details"/>
+          <include name="verify_user_can_delete_a_user"/>
+          <include name="setup"/>
+          <include name="verify_user_can_add_user_details"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.buffalocart.testscripts.UsersPageTest -->
+      <class name="com.buffalocart.testscripts.LoginPageTest">
+        <methods>
+          <include name="verify_Valid_Login"/>
+          <include name="setup"/>
+          <include name="verifyCheckboxSelected"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.buffalocart.testscripts.LoginPageTest -->
+    </classes>
+  </test> <!-- Functionaltest(failed) -->
+</suite> <!-- Failed suite [Regression Suite] -->

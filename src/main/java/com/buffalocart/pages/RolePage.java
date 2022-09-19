@@ -57,7 +57,8 @@ public class RolePage extends ObjectUtility {
         wait.waitUntilVisibilityOfElement(20,driver,edit_role_page);
         page.clickOnElement(edit_role_page);
         return new EditRollPage(driver);
-    }
+
+   }
     public String getEditRollPageTitle(){
         String title=page.getPageTitle(driver);
         return title;

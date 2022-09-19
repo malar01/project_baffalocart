@@ -65,13 +65,13 @@ public class Base {
 
     @BeforeMethod(alwaysRun = true)
     @Parameters({"browser"})
-    //public void setup() {
-       /* testInitialize("chrome", "https://qalegend.com/billing/public/login");
-    }*/
-    public void setup(String browserName) {
+    public void setup() {
+     testInitialize("chrome", "https://qalegend.com/billing/public/login");
+    }
+    /*public void setup(String browserName) {
         String baseurl=prop.getProperty("url");
         testInitialize(browserName,baseurl);
-    }
+    }*/
     @AfterMethod
     public void tearDown(ITestResult result) throws IOException {
         if (result.getStatus() == ITestResult.FAILURE) {
@@ -80,5 +80,6 @@ public class Base {
             FileUtils.copyFile(screenshot, new File("./Screenshots/" + result.getName() + ".png"));
         }
         driver.quit();
+     driver.quit();
     }
 }
